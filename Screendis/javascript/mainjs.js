@@ -1,7 +1,7 @@
 // JavaScript Document
 //接口公共地址
-// = 'http://192.168.3.105:8000';
-// = 'http://www.lisuper.cn';
+urlmose= 'http://192.168.3.105:8000';
+ //urlmose= 'http://www.lisuper.cn';
 /*
 右上角获取当前时间
 */
@@ -118,7 +118,7 @@ dv1总指数
 			 color: '#ffb400',
 			 marker: {
 	           enabled: false
-	         }
+	          }
 		  }
 		 
 	   ];
@@ -142,7 +142,7 @@ dv1总指数
 */
 $(document).ready(function() {
 	$.ajax({
-	      url:'http://192.168.3.105:8000/index.php/index/index/test',
+	      url:urlmose+'/index.php/index/index/test',
 	      type:'post',
 	      dataType:'json',
 	      data:{},
@@ -167,7 +167,7 @@ $(document).ready(function() {
 /*示范区*/
 $(document).ready(function() {
 $.ajax({
-  url:'http://192.168.3.105:8000/index.php/index/Picture/demonstration',
+  url:urlmose+'/index.php/index/Picture/demonstration',
   type:'get',
   dataType:'json',
   data:{},
@@ -210,7 +210,7 @@ $.ajax({
 /*中药材产品*/
 $(document).ready(function() {
 $.ajax({
-  url:'http://192.168.3.105:8000/index.php/index/Picture/product',
+  url:urlmose+'/index.php/index/Picture/product',
   type:'get',
   dataType:'json',
   data:{},
@@ -348,7 +348,7 @@ $(document).ready(function() {
 $(document).ready(function() { 
 $.ajax({
   // url:'http://192.168.3.105:8000/index.php/index/Picture/rise',
-  url:'http://192.168.3.105:8000/index.php/index/Picture/rise',
+  url:urlmose+'/index.php/index/Picture/rise',
   type:'get',
   dataType:'json',
   data:{},
@@ -462,7 +462,7 @@ $.ajax({
 */
 $(document).ready(function() {
 $.ajax({
-  url:'http://192.168.3.105:8000/index.php/index/Picture/tumble',
+  url:urlmose+'/index.php/index/Picture/tumble',
   type:'get',
   dataType:'json',
   data:{},
@@ -574,7 +574,7 @@ $.ajax({
 */
 $(document).ready(function() {
 $.ajax({
-  url:'http://192.168.3.105:8000/index.php/index/Picture/supply',
+  url:urlmose+'/index.php/index/Picture/supply',
   type:'get',
   dataType:'json',
   data:{},
@@ -621,7 +621,7 @@ $.ajax({
 */
 $(document).ready(function() {
 $.ajax({
-  url:'http://192.168.3.105:8000/index.php/index/Picture/buy',
+  url:urlmose+'/index.php/index/Picture/buy',
   type:'get',
   dataType:'json',
   data:{},
@@ -670,7 +670,7 @@ $.ajax({
 /*优秀企业*/
 $(document).ready(function() {
 $.ajax({
-  url:'http://192.168.3.105:8000/index.php/index/Picture/excellent',
+  url:urlmose+'/index.php/index/Picture/excellent',
   type:'get',
   dataType:'json',
   data:{},
@@ -714,7 +714,7 @@ $.ajax({
 /*优秀产品*/
 $(document).ready(function() {
 $.ajax({
-  url:'http://192.168.3.105:8000/index.php/index/Picture/quality',
+  url:urlmose+'/index.php/index/Picture/quality',
   type:'get',
   dataType:'json',
   data:{},
