@@ -1,7 +1,7 @@
 // JavaScript Document
 //接口公共地址
-urldemo = 'http://192.168.3.105:8000';
-// urldemo = 'http://www.lisuper.cn';
+// = 'http://192.168.3.105:8000';
+// = 'http://www.lisuper.cn';
 /*
 右上角获取当前时间
 */
@@ -115,8 +115,12 @@ dv1总指数
 		  {
 			 name: 'Tokyo',
 			 data: [2.5,0, 2,0, 5.2,0, 7.2,0, 9.6,0, 10,0, 11,0, 12,0],
-			 color: '#ffb400'
+			 color: '#ffb400',
+			 marker: {
+	           enabled: false
+	         }
 		  }
+		 
 	   ];
 	   
 	   var json = {};
@@ -252,6 +256,85 @@ $.ajax({
 市场价格
 图表 列表
  */
+/*图表*/
+$(document).ready(function() {
+	   var chart= {  		  
+		  backgroundColor: 'rgba(0,0,0,0)' ,
+		   
+	   }; 
+	   var title = {
+		  text: null   
+	   };
+	   var subtitle = {
+		  text: null
+	   };
+	   var xAxis = {
+		   /*labels:{ 
+			step:12
+		  },*/
+		  categories: ['2015年1月','2015年2月','2015年3月','2015年4月','2015年5月','2015年6月','2015年7月','2015年8月','2015年9月','2015年10月',
+		               '2015年11月','2015年12月','2016年1月','2016年2月','2016年3月','2016年4月','2016年5月','2016年6月','2016年7月','2016年8月',
+		               '2016年9月','2016年10月','2016年11月','2016年12月','2017年1月','2017年2月','2017年3月','2017年4月','2017年5月','2017年6月',
+		               '2017年7月','2017年8月','2017年9月','2017年10月','2017年11月','2017年12月','2018年1月','2018年2月','2018年3月','2018年4月',
+		               '2018年5月','2018年6月','2018年7月','2018年8月','2018年9月','2018年10月','2018年11月','2018年12月'],
+		  tickInterval:12,
+		  gridLineColor: '#6c6a91',//网格线颜色
+		  color:'#6c6a91'
+		  /*labels: {
+                rotation: -15//让标签旋转-45°
+            }*/
+	        
+	   };
+	   var yAxis = {
+		  title: {
+			 text: null
+		  },
+		  gridLineColor: '#6c6a91',//纵向网格线颜色
+		  lineWidth:1,  //Y轴默认不显示Y轴线，添加一个轴线的宽度就可以显示出来
+		  color:'#6c6a91',
+　　      tickPixelInterval:10 , //自行调整Y轴刻度的间距 
+		  labels: {//y轴刻度文字标签  
+			formatter: function () {  
+				return this.value + 'k';//y轴加上%  
+			}  
+		  },  
+		 
+	   };   
+	
+	   var tooltip = {
+		  valueSuffix: 'k'
+	   }
+	
+	   var legend = {
+		  enabled: false
+	   };
+	   
+	   var credits = {  
+		enabled: false     //不显示LOGO 
+	   };
+	
+	   var series =  [
+		  {
+			 name: '红花 荷花池药市',
+			 data: [83,83,83,82,78,78,80,80,88,95,100,100,84,89,83,83,86,86,90,90,115,115,110,110,105,105,96,96,89,89,89,98,98,100,100,
+			        86,86,96,96,90,83,83,83,82,78,78,80,80],
+			 color: '#ffb400'
+		  }
+	   ];
+	   
+	   var json = {};
+	   json.chart = chart;
+	   json.title = title;
+	   json.subtitle = subtitle;
+	   json.xAxis = xAxis;
+	   json.yAxis = yAxis;
+	   json.tooltip = tooltip;
+	   json.legend = legend;
+	   json.credits = credits;
+	   json.series = series;	
+	   $('#middle-tu').highcharts(json);
+	});
+
 /*列表*/
 
 
@@ -265,7 +348,7 @@ $.ajax({
 $(document).ready(function() { 
 $.ajax({
   // url:'http://192.168.3.105:8000/index.php/index/Picture/rise',
-  url:urldemo+'/index.php/index/Picture/rise',
+  url:'http://192.168.3.105:8000/index.php/index/Picture/rise',
   type:'get',
   dataType:'json',
   data:{},
